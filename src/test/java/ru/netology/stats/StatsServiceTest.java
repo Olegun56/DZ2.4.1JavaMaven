@@ -11,11 +11,10 @@ class StatsServiceTest {
         StatsService service = new StatsService();
 
         long[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
-        long expected = 180;
 
-        long actual = service.SumAllMonthSales(sales);
+        long actual = service.sumAllMonthSales(sales);
 
-        assertEquals(expected, actual);
+        assertEquals(180, actual);
     }
 
     @Test
@@ -23,11 +22,10 @@ class StatsServiceTest {
         StatsService service = new StatsService();
 
         long[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
-        long expected = 15;
 
-        long actual = service.MidMonthSales(sales);
+        long actual = service.midMonthSales(sales);
 
-        assertEquals(expected, actual);
+        assertEquals(15, actual);
     }
 
     @Test
@@ -35,11 +33,10 @@ class StatsServiceTest {
         StatsService service = new StatsService();
 
         long[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
-        long expected = 8;
 
-        long actual = service.MonthSalesMax(sales);
+        long actual = service.monthSalesMax(sales);
 
-        assertEquals(expected, actual);
+        assertEquals(8, actual);
     }
 
     @Test
@@ -47,11 +44,9 @@ class StatsServiceTest {
         StatsService service = new StatsService();
 
         long[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
-        long expected = 9;
+        long actual = service.monthSalesMin(sales);
 
-        long actual = service.MonthSalesMin(sales);
-
-        assertEquals(expected, actual);
+        assertEquals(9, actual);
     }
 
     @Test
@@ -59,11 +54,9 @@ class StatsServiceTest {
         StatsService service = new StatsService();
 
         long[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
-        long expected = 5;
+        long actual = service.underMidMonthSales(sales);
 
-        long actual = service.UnderMidMonthSales(sales);
-
-        assertEquals(expected, actual);
+        assertEquals(5, actual);
 
     }
 
@@ -72,11 +65,10 @@ class StatsServiceTest {
         StatsService service = new StatsService();
 
         long[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
-        long expected = 5;
 
-        long actual = service.OverMidMonthSales(sales);
+        long actual = service.overMidMonthSales(sales);
 
-        assertEquals(expected, actual);
+        assertEquals(5, actual);
 
     }
 }

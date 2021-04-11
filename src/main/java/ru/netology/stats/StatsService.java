@@ -2,7 +2,7 @@ package ru.netology.stats;
 
 
 public class StatsService {
-    public long SumAllMonthSales(long[] sales) {
+    public long sumAllMonthSales(long[] sales) {
         long sum = 0;
         for (long monthSale : sales) {
             sum += monthSale;
@@ -10,18 +10,12 @@ public class StatsService {
         return sum;
     }
 
-    public long MidMonthSales(long[] sales) {
-        long sum = 0;
-        long midsales = 0;
-        for (long monthSale : sales) {
-            sum += monthSale;
-            midsales = sum / 12;
-        }
-        return midsales;
+    public long midMonthSales(long[] sales) {
+        return this.sumAllMonthSales(sales) / 12;
     }
 
 
-    public long MonthSalesMax(long[] sales) {
+    public long monthSalesMax(long[] sales) {
         long currentMax = sales[0];
         for (long sale : sales) {
             if (currentMax < sale) {
@@ -40,7 +34,7 @@ public class StatsService {
         return maxMonth;
     }
 
-    public long MonthSalesMin(long[] sales) {
+    public long monthSalesMin(long[] sales) {
         long currentMin = sales[0];
         for (long sale : sales) {
             if (currentMin > sale) {
@@ -59,16 +53,10 @@ public class StatsService {
         return minMonth;
     }
 
-    public long UnderMidMonthSales(long[] sales) {
-        long sum = 0;
-        long midsales = 0;
-        for (long Sale : sales) {
-            sum += Sale;
-            midsales = sum / 12;
-        }
+    public long underMidMonthSales(long[] sales) {
         int sumMonth = 0;
         for (long sale : sales) {
-            if (sale < midsales) {
+            if (sale < this.midMonthSales(sales)) {
                 sumMonth = sumMonth + 1;
 
             }
@@ -76,16 +64,11 @@ public class StatsService {
         return sumMonth;
     }
 
-    public long OverMidMonthSales(long[] sales) {
-        long sum = 0;
-        long midsales = 0;
-        for (long Sale : sales) {
-            sum += Sale;
-            midsales = sum / 12;
-        }
+    public long overMidMonthSales(long[] sales) {
+
         int sumMonth = 0;
         for (long sale : sales) {
-            if (sale > midsales) {
+            if (sale > this.midMonthSales(sales)) {
                 sumMonth = sumMonth + 1;
 
             }
