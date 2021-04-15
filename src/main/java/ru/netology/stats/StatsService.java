@@ -7,11 +7,11 @@ public class StatsService {
         for (long monthSale : sales) {
             sum += monthSale;
         }
-        return sum;
+       return sum;
     }
 
     public long midMonthSales(long[] sales) {
-        return this.sumAllMonthSales(sales) / 12;
+        return sumAllMonthSales(sales) / 12;
     }
 
 
@@ -56,7 +56,7 @@ public class StatsService {
     public long underMidMonthSales(long[] sales) {
         int sumMonth = 0;
         for (long sale : sales) {
-            if (sale < this.midMonthSales(sales)) {
+            if (sale < midMonthSales(sales)) {
                 sumMonth = sumMonth + 1;
 
             }
@@ -65,10 +65,9 @@ public class StatsService {
     }
 
     public long overMidMonthSales(long[] sales) {
-
         int sumMonth = 0;
         for (long sale : sales) {
-            if (sale > this.midMonthSales(sales)) {
+            if (sale > midMonthSales(sales)) {
                 sumMonth = sumMonth + 1;
 
             }
